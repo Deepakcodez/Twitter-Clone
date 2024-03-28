@@ -6,10 +6,10 @@ import Rightbar from "./_components/Rightbar";
 export default function Home() {
   return (
     <div>
-      <div className="parent grid grid-cols-12 h-screen w-screen "> 
-       <div className="sidebar col-span-3"><Sidebar/></div>
+      <div className="parent grid grid-cols-12 h-[100vh] w-full lg:px-32"> 
+       <div className="sidebar col-span-1  lg:col-span-3  "><Sidebar/></div>
        <div className="sidebar col-span-6  border-x-[1px] border-x-gray-800"><Feed/></div>
-       <div className="sidebar col-span-3"><Rightbar/></div>
+       <div className="sidebar col-span-3 hidden md:block"><Rightbar/></div>
       </div>
     </div>
   );
