@@ -1,7 +1,17 @@
+import FeedCard from "./FeedCard";
+
 const Feed = () => {
     return (<>
-     <div className="w-full h-full bg-gray-400">
-        Feed
+     <div className="w-full h-screen overflow-scroll no-scrollbar  ">
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
+        <FeedCard/>
      </div>
     </>  );
 }
