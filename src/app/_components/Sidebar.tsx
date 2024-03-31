@@ -47,7 +47,7 @@ const Sidebar = () => {
     <>
       <div className="w-full ">
         {/* Logo */}
-        <div className="hover:bg-gray-500/25 cursor-pointer pl-2 transition-all rounded-full w-fit  ">
+        <div className="hover:bg-gray-500/25 cursor-pointer ml-2 transition-all rounded-full w-fit  ">
           <BsTwitterX className="text-5xl mt-2 p-3 " />
         </div>
         {/* Logo */}
