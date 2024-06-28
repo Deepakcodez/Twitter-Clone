@@ -6,15 +6,20 @@ import { FaBell } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa";
 import { IoPerson } from "react-icons/io5";
+import { useCurrentUser } from "../../../graphql/query/hooks/user";
+
+
+interface sidebarOptionsType{
+  title : string;
+  icon : React.ReactNode;
+}
 
 
 const Sidebar = () => {
     
-    interface sidebarOptionsType{
-        title : string;
-        icon : React.ReactNode;
-    }
 
+  const {user} = useCurrentUser();
+   
     const sidebarButtons : sidebarOptionsType[] =
     [
      {
@@ -71,6 +76,13 @@ const Sidebar = () => {
         <h1 className="text-center text-lg">Post</h1>
     </div>
     {/* post button */}
+    {
+      user&&
+      <div>
+      user
+    </div>
+    }
+   
       </div>
     </>
   );

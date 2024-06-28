@@ -4,10 +4,12 @@ import { useCallback } from "react";
 import toast from "react-hot-toast";
 import { graphqlClient } from "../../../clients/api";
 import { verifyUserGoogleToken } from "../../../graphql/query/user";
+import { useCurrentUser } from "../../../graphql/query/hooks/user";
 const Rightbar = () => {
 
-  
+   const {user} = useCurrentUser();
   const handleLoginWithGoogle = useCallback(async(cred: CredentialResponse) => {
+         
 
     const googleToken = cred.credential;
 
@@ -25,12 +27,16 @@ const Rightbar = () => {
   return (
     <>
       <div className="w-full h-full ">
-        <div className=" bg-slate-700/50 rounded-lg p-5 m-2">
+        {
+          !user &&
+          <div className=" bg-slate-700/50 rounded-lg p-5 m-2">
           <h1 className="text-xs">New on Twitter</h1>
           <GoogleLogin
             onSuccess={handleLoginWithGoogle}
           />
         </div>
+        }
+       
       </div>
     </>
   );
