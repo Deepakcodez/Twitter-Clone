@@ -74,7 +74,7 @@ const Sidebar = () => {
         {/* buttons  */}
 
         {/* post button */}
-        <button className="bg-[#1DA1F2] rounded-full mr-20 py-1 cursor-pointer mt-5">
+        <button className="bg-[#1DA1F2] w-[8rem] rounded-full mr-20 py-1 cursor-pointer mt-5">
           <h1 className="text-center text-lg">Post</h1>
         </button>
         {/* post button */}

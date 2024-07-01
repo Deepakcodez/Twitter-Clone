@@ -3,7 +3,15 @@ import { FaBookmark } from "react-icons/fa";
 import { BiMessageRounded, BiUpload } from "react-icons/bi";
 import { FaRetweet } from "react-icons/fa";
 import { AiOutlineHeart } from "react-icons/ai";
-const FeedCard = () => {
+import { FC } from "react";
+import { Tweet } from "../../../gql/graphql";
+
+interface FeedCardProps{
+    data : Tweet
+}
+const FeedCard:FC<FeedCardProps> = ({data}) => {
+       
+
     return ( 
         <>
         <div className="border-t-[1px]  border-gray-400/50 hover:bg-gray-800/75 transition-all cursor-pointer ">
@@ -19,8 +27,8 @@ const FeedCard = () => {
                  />
                 </div>
                 <div className="col-span-11 px-3">
-                    <h1>Deepak</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius nulla, culpa accusamus necessitatibus sunt soluta tempora? Ipsam exercitationem eum quis.</p>
+                    <h1>{data.author?.firstName} {data.author?.lastName} </h1>
+                    <p>{data.content}</p>
 
             <div className="flex pt-3 pr-10 gap-5 justify-between text-lg items-center">
                 <div><BiMessageRounded/></div>

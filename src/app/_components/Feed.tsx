@@ -4,10 +4,12 @@ import { useCurrentUser } from "../../../graphql/query/hooks/user";
 import FeedCard from "./FeedCard";
 import { IoImageOutline } from "react-icons/io5";
 import { useCallback } from "react";
+import { useGetAllTweets } from "../../../graphql/query/hooks/tweet";
 
 const Feed = () => {
 
     const { user } = useCurrentUser();
+    const { tweets = [ ]} = useGetAllTweets();
 
     const handleImageUpload = useCallback(() => {
         const input = document.createElement('input');
@@ -48,15 +50,9 @@ const Feed = () => {
                     </div>
                 </div>
             </div>
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
-            <FeedCard />
+            {
+               tweets?.map(tweet=> <FeedCard key={tweet?.id} data={tweet}/>)
+            }
         </div>
     </>);
 }
