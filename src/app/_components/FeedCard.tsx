@@ -27,7 +27,7 @@ const FeedCard:FC<FeedCardProps> = ({data}) => {
                  />
                 </div>
                 <div className="col-span-11 px-3">
-                    <h1>{data.author?.firstName} {data.author?.lastName} </h1>
+                    <h1 className="text-white/75">{data.author?.firstName} {data.author?.lastName} </h1>
                     <p>{data.content}</p>
 
             <div className="flex pt-3 pr-10 gap-5 justify-between text-lg items-center">
