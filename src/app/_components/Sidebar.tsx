@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { Fragment } from "react";
 import { BsTwitterX } from "react-icons/bs";
 import { AiFillHome } from "react-icons/ai";
 import { FaSearch } from "react-icons/fa";
@@ -63,12 +63,12 @@ const Sidebar = () => {
         <ul className="mt-3">
           {
             sidebarButtons.map((data, index) =>
-              <>
+              <Fragment key={index}>
                 <li className="flex justify-start items-center gap-5 py-2 px-4 rounded-full transition-all  w-fit hover:bg-gray-500/25 cursor-pointer mb-2">
                   <span className="text-3xl">{data.icon}</span>
                   <span className="text-xl hidden lg:block">{data.title}</span>
                 </li>
-              </>)
+              </Fragment>)
           }
         </ul>
         {/* buttons  */}

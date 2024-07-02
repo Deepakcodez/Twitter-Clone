@@ -19,7 +19,7 @@ const FeedCard:FC<FeedCardProps> = ({data}) => {
                 <div className="col-span-1 ">
                 <Image 
                  className="rounded-full"
-                 src="https://avatars.githubusercontent.com/u/138669669?v=4"
+                 src={data.author?.profileImageURL || '/defaultavatar.jpg' }
                  alt="User-avatar" 
                  height={50} 
                  width={50}
